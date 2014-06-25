@@ -12,7 +12,6 @@ import org.json.*;
 
 public class TocHW3 {
 	public static void main(String[] args) throws JSONException {
-		// TODO Auto-generated method stub
 		String comparedYear = "", listedYear = "";
 		int avg_price, amount = 0, count = 0;
 		
@@ -43,7 +42,6 @@ public class TocHW3 {
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		avg_price = amount/count;
