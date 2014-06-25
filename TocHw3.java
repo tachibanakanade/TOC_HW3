@@ -1,10 +1,16 @@
+/**
+ * ID: F74009020
+ * Author: 姚書涵
+ * Description: Parsing real estate
+ * 		熟悉JSON的用法﹑其中交易年月看args[3]的length來決定substring要取到哪
+ */
+
 import java.net.*;
 import java.io.*;
 import org.json.*;
-import java.util.*;
 
 
-public class TocHw3 {
+public class TocHW3 {
 	public static void main(String[] args) throws JSONException {
 		// TODO Auto-generated method stub
 		String comparedYear = "", listedYear = "";
@@ -25,7 +31,7 @@ public class TocHw3 {
 					listedYear = "" + jsonRealPrice.getJSONObject(i).getInt("交易年月");
 					if(jsonRealPrice.getJSONObject(i).getString("鄉鎮市區").equals(args[1]) 
 						&& jsonRealPrice.getJSONObject(i).getString("土地區段位置或建物區門牌").contains(args[2])
-						&& listedYear.substring(0, 3).equals(comparedYear))
+						&& listedYear.substring(0, args[3].length()).equals(comparedYear))
 					{
 						count++;
 						amount += jsonRealPrice.getJSONObject(i).getInt("總價元");
